@@ -1,0 +1,240 @@
+﻿<Window x:Class="lab_02_os_462.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle ="None" 
+        ResizeMode="NoResize"
+        Background="Black"
+
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="75"/>
+
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="75"/>
+
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" Margin="0,0,5,0">
+            <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Height="272">
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Elapsed time" LabelFormatter="{Binding YFormatter}">
+                        
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis  Labels="{Binding Labels}"  >
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Step="1" />
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+            </lvc:CartesianChart>
+        </StackPanel>
+
+
+
+
+
+      
+
+
+        <Grid Background="#555b6e"
+              MouseDown="GridMouseDown"
+              Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Text="Disc scheduling "
+                       Foreground="Black"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center">
+
+            </TextBlock>
+
+          
+
+        </Grid>
+
+        <StackPanel Grid.Row="2"
+                    Margin="50,30,29,23"
+                    Grid.ColumnSpan="2">
+
+            <StackPanel Orientation="Horizontal" Height="50">
+                <Label 
+                    VerticalAlignment="Center" Background="#f56642" Foreground="purple" Content=" Values for disk 1"/>
+                <TextBox x:Name="d11" Width="30" Height="20" Margin="40,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d12" Width="30" Height="20" Margin="10,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d13" Width="30" Height="20" Margin="10,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d14" Width="30" Height="20" Margin="10,0,30,0" VerticalAlignment="Center" TextAlignment="Center"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="50">
+
+                <Label
+                    VerticalAlignment="Center" Background="#f56642" Foreground="purple" Content="Values for disk  2"/>
+                <TextBox x:Name="d21" Width="30" Height="20" Margin="40,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d22" Width="30" Height="20" Margin="10,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d23" Width="30" Height="20" Margin="10,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d24" Width="30" Height="20" Margin="10,0,30,0" VerticalAlignment="Center" TextAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="50">
+                <Label
+                    VerticalAlignment="Center" Background="#f56642" Foreground="purple" Content="Values for disk 3"/>
+                <TextBox x:Name="d31" Width="30" Height="20" Margin="40,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d32" Width="30" Height="20" Margin="10,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d33" Width="30" Height="20" Margin="10,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d34" Width="30" Height="20" Margin="10,0,30,0" VerticalAlignment="Center" TextAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="50">
+                <Label
+                    VerticalAlignment="Center" Background="#f56642" Foreground="purple" Content="Values for disk 4"/>
+                <TextBox x:Name="d41" Width="30" Height="20" Margin="40,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d42" Width="30" Height="20" Margin="10,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d43" Width="30" Height="20" Margin="10,0,10,0" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="d44" Width="30" Height="20" Margin="10,0,30,0" VerticalAlignment="Center" TextAlignment="Center"/>
+            </StackPanel>
+
+
+
+        </StackPanel>
+
+
+
+       
+
+        <StackPanel Grid.Row="3"
+                    Margin="30,5,10,-37"
+                    Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" Height="93">
+
+                <Button x:Name="Add" Content="Add to test 1"
+                        Foreground="purple"
+                        Margin="30" Click="Add_to_test" >
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#f56642"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#f56642"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="100" Height="30"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+                <Button x:Name="Ready" Content="Ready"
+                        Foreground="purple"
+                        Margin="30" Click="Ready_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#f56642"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#38a3a5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="70" Height="30"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+                <Button x:Name="Reset" Content="Reset"
+                        Foreground="purple"
+                        Margin="1" Click="Reset_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#f56642"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#f56642"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="70" Height="30"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+      
+
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>

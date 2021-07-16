@@ -1,0 +1,76 @@
+﻿<Window x:Class="lab_02_os_462.Error"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Info" Height="200" Width="400"
+        WindowStyle ="None" 
+        ResizeMode="NoResize"
+        Background="black"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=" 25"/>
+            <RowDefinition/>
+
+            <RowDefinition/>
+
+
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Background="#555b6e"
+              MouseDown="GridMouseDown"
+              Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+
+
+            </Grid.ColumnDefinitions>
+
+
+            
+
+           
+                
+        </Grid>
+
+
+
+        <StackPanel Grid.Row="1"
+                    Margin="41,50,48,36" 
+                    Grid.ColumnSpan="2" 
+                    Grid.RowSpan="2"
+
+                    >
+
+            <StackPanel Margin="20,20,20,20"
+                        >
+
+                <TextBlock
+                    Text=" no insert value " FontWeight="Bold" Foreground="IndianRed" Height="50" FontSize="22" Width="242">
+
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
